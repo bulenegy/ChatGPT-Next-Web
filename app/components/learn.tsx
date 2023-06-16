@@ -322,15 +322,19 @@ export function LearnPage() {
         <div className="window-header">
           <div className="window-header-title">
             <div className="window-header-main-title">
-              {Locale.Mask.Page.Title}
+                学习中心
+
+              {/* {Locale.Mask.Page.Title} */}
             </div>
             <div className="window-header-submai-title">
-              {Locale.Mask.Page.SubTitle(allMasks.length)}
+                学习更多ChatGPT使用技巧
+              {/* {Locale.Mask.Page.SubTitle(allMasks.length)} */}
             </div>
           </div>
 
           <div className="window-actions">
-            <div className="window-action-button">
+
+            {/* <div className="window-action-button">
               <IconButton
                 icon={<DownloadIcon />}
                 bordered
@@ -343,7 +347,8 @@ export function LearnPage() {
                 bordered
                 onClick={() => importFromFile()}
               />
-            </div>
+            </div> */}
+
             <div className="window-action-button">
               <IconButton
                 icon={<CloseIcon />}
@@ -363,7 +368,8 @@ export function LearnPage() {
               autoFocus
               onInput={(e) => onSearch(e.currentTarget.value)}
             />
-            <Select
+
+            {/* <Select
               className={styles["mask-filter-lang"]}
               value={filterLang ?? Locale.Settings.Lang.All}
               onChange={(e) => {
@@ -383,9 +389,9 @@ export function LearnPage() {
                   {ALL_LANG_OPTIONS[lang]}
                 </option>
               ))}
-            </Select>
+            </Select> */}
 
-            <IconButton
+            {/* <IconButton
               className={styles["mask-create"]}
               icon={<AddIcon />}
               text={Locale.Mask.Page.Create}
@@ -394,7 +400,8 @@ export function LearnPage() {
                 const createdMask = maskStore.create();
                 setEditingMaskId(createdMask.id);
               }}
-            />
+            /> */}
+
           </div>
 
           <div>

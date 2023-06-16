@@ -142,9 +142,9 @@ export function SideBar(props: { className?: string }) {
           className={styles["sidebar-bar-button"]}
           // onClick={() => showToast(Locale.WIP)}
 
-
-          //计算此处开发为学习中心
-          onClick={() => navigate(Path.NewChat, { state: { fromHome: true } })}
+          //a5470
+          //计划此处开发为学习中心
+          onClick={() => navigate(Path.Learn, { state: { fromHome: true } })}
 
 
           shadow

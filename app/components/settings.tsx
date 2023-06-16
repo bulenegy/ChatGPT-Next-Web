@@ -466,6 +466,7 @@ export function Settings() {
             ></input>
           </ListItem>
 
+          {/* 新建聊天时展示面具启动页面 */}
           <ListItem
             title={Locale.Settings.Mask.Title}
             subTitle={Locale.Settings.Mask.SubTitle}
@@ -474,11 +475,11 @@ export function Settings() {
               type="checkbox"
               checked={!config.dontShowMaskSplashScreen}
               onChange={(e) =>
-                updateConfig(
-                  (config) =>
-                    (config.dontShowMaskSplashScreen =
-                      !e.currentTarget.checked),
-                )
+                updateConfig((config) => {
+                  const checked = e.target.checked;
+                  config.dontShowMaskSplashScreen = !checked;
+                  return config;
+                })
               }
             ></input>
           </ListItem>

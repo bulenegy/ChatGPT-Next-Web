@@ -129,6 +129,7 @@ export function NewChat() {
               if (confirm(Locale.NewChat.ConfirmNoShow)) {
                 startChat();
                 config.update(
+                  //a5470
                   (config) => (config.dontShowMaskSplashScreen = false),
                 );
               }

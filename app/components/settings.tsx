@@ -466,7 +466,7 @@ export function Settings() {
             ></input>
           </ListItem>
 
-          {/* 新建聊天时展示面具启动页面 */}
+          {/* a5470新建聊天时展示面具启动页面 */}
           <ListItem
             title={Locale.Settings.Mask.Title}
             subTitle={Locale.Settings.Mask.SubTitle}
@@ -478,7 +478,7 @@ export function Settings() {
                 updateConfig(
                   (config) =>
                   (config.dontShowMaskSplashScreen =
-                    !e.currentTarget.checked),
+                    e.currentTarget.checked),
                 )
               }
             ></input>

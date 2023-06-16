@@ -362,8 +362,8 @@ export function Settings() {
               checkingUpdate
                 ? Locale.Settings.Update.IsChecking
                 : hasNewVersion
-                ? Locale.Settings.Update.FoundUpdate(remoteId ?? "ERROR")
-                : Locale.Settings.Update.IsLatest
+                  ? Locale.Settings.Update.FoundUpdate(remoteId ?? "ERROR")
+                  : Locale.Settings.Update.IsLatest
             }
           >
             {checkingUpdate ? (
@@ -473,13 +473,13 @@ export function Settings() {
           >
             <input
               type="checkbox"
-              checked={!config.dontShowMaskSplashScreen}
+              checked={config.dontShowMaskSplashScreen}
               onChange={(e) =>
-                updateConfig((config) => {
-                  const checked = e.target.checked;
-                  config.dontShowMaskSplashScreen = !checked;
-                  return config;
-                })
+                updateConfig(
+                  (config) =>
+                  (config.dontShowMaskSplashScreen =
+                    !e.currentTarget.checked),
+                )
               }
             ></input>
           </ListItem>
@@ -527,9 +527,9 @@ export function Settings() {
                 ? loadingUsage
                   ? Locale.Settings.Usage.IsChecking
                   : Locale.Settings.Usage.SubTitle(
-                      usage?.used ?? "[?]",
-                      usage?.subscription ?? "[?]",
-                    )
+                    usage?.used ?? "[?]",
+                    usage?.subscription ?? "[?]",
+                  )
                 : Locale.Settings.Usage.NoAccess
             }
           >

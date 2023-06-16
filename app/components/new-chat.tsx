@@ -129,7 +129,7 @@ export function NewChat() {
               if (confirm(Locale.NewChat.ConfirmNoShow)) {
                 startChat();
                 config.update(
-                  (config) => (config.dontShowMaskSplashScreen = true),
+                  (config) => (config.dontShowMaskSplashScreen = false),
                 );
               }
             }}

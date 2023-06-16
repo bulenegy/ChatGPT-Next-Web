@@ -191,10 +191,15 @@ export function SideBar(props: { className?: string }) {
             text={shouldNarrow ? undefined : Locale.Home.NewChat}
             onClick={() => {
               if (config.dontShowMaskSplashScreen) {
+                // chatStore.newSession();
+                // navigate(Path.Chat);
+
+                navigate(Path.NewChat);
+              } else {
+                // navigate(Path.NewChat);
+
                 chatStore.newSession();
                 navigate(Path.Chat);
-              } else {
-                navigate(Path.NewChat);
               }
             }}
             shadow

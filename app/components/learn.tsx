@@ -366,55 +366,7 @@ export function LearnPage() {
           </div>
         </div>
 
-        <div className={styles["mask-page-body"]}>
-          <div className={styles["mask-filter"]}>
-            <input
-              type="text"
-              className={styles["search-bar"]}
-              // placeholder={Locale.Mask.Page.Search}
-              placeholder="搜索学习教程"
-              autoFocus
-              onInput={(e) => onSearch(e.currentTarget.value)}
-            />
-
-            {/* a5470 */}
-            {/* <Select
-              className={styles["mask-filter-lang"]}
-              value={filterLang ?? Locale.Settings.Lang.All}
-              onChange={(e) => {
-                const value = e.currentTarget.value;
-                if (value === Locale.Settings.Lang.All) {
-                  setFilterLang(undefined);
-                } else {
-                  setFilterLang(value as Lang);
-                }
-              }}
-            >
-              <option key="all" value={Locale.Settings.Lang.All}>
-                {Locale.Settings.Lang.All}
-              </option>
-              {AllLangs.map((lang) => (
-                <option value={lang} key={lang}>
-                  {ALL_LANG_OPTIONS[lang]}
-                </option>
-              ))}
-            </Select>
-
-            <IconButton
-              className={styles["mask-create"]}
-              icon={<AddIcon />}
-              text={Locale.Mask.Page.Create}
-              bordered
-              onClick={() => {
-                const createdMask = maskStore.create();
-                setEditingMaskId(createdMask.id);
-              }}
-            /> */}
-
-
-          </div>
-
-          <div>
+        
             <div style={{ 
                   border: 'solid 2px gray', 
                   maxWidth: '30%',
@@ -427,75 +379,8 @@ export function LearnPage() {
                   borderRadius: '10px'
                 }}/>
 
-              <h3>安卓设备快速使用ChatGPT方式</h3>
-              <p>在系统自带浏览器地址栏中输入woaichat.com</p>
-              
+              <h3>安卓设备快速使用ChatGPT方式</h3>             
             </div>
-
-
-
-
-
-
-
-
-
-
-            {masks.map((m) => (
-              <div className={styles["mask-item"]} key={m.id}>
-                <div className={styles["mask-header"]}>
-                  <div className={styles["mask-icon"]}>
-                    <MaskAvatar mask={m} />
-                  </div>
-                  <div className={styles["mask-title"]}>
-                    <div className={styles["mask-name"]}>{m.name}</div>
-                    <div className={styles["mask-info"] + " one-line"}>
-                      {`${Locale.Mask.Item.Info(m.context.length)} / ${ALL_LANG_OPTIONS[m.lang]
-                        } / ${m.modelConfig.model}`}
-                    </div>
-                  </div>
-                </div>
-                <div className={styles["mask-actions"]}>
-                  <IconButton
-                    icon={<AddIcon />}
-                    text={Locale.Mask.Item.Chat}
-                    onClick={() => {
-                      chatStore.newSession(m);
-                      navigate(Path.Chat);
-                    }}
-                  />
-                  {m.builtin ? (
-                    <IconButton
-                      icon={<EyeIcon />}
-                      text={Locale.Mask.Item.View}
-                      onClick={() => setEditingMaskId(m.id)}
-                    />
-                  ) : (
-                    <IconButton
-                      icon={<EditIcon />}
-                      text={Locale.Mask.Item.Edit}
-                      onClick={() => setEditingMaskId(m.id)}
-                    />
-                  )}
-                  {!m.builtin && (
-                    <IconButton
-                      icon={<DeleteIcon />}
-                      text={Locale.Mask.Item.Delete}
-                      onClick={() => {
-                        if (confirm(Locale.Mask.Item.DeleteConfirm)) {
-                          maskStore.delete(m.id);
-                        }
-                      }}
-                    />
-                  )}
-                </div>
-              </div>
-            ))}
-
-          </div>
-
-
-        </div>
       </div>
 
       {editingMask && (

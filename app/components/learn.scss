@@ -1,73 +1,108 @@
-.settings {
+@import "../styles/animation.scss";
+.mask-page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .mask-page-body {
     padding: 20px;
-    overflow: auto;
-  }
-  
-  .avatar {
-    cursor: pointer;
-  }
-  
-  .edit-prompt-modal {
-    display: flex;
-    flex-direction: column;
-  
-    .edit-prompt-title {
-      max-width: unset;
-      margin-bottom: 20px;
-      text-align: left;
-    }
-    .edit-prompt-content {
-      max-width: unset;
-    }
-  }
-  
-  .user-prompt-modal {
-    min-height: 40vh;
-  
-    .user-prompt-search {
+    overflow-y: auto;
+
+    .mask-filter {
       width: 100%;
       max-width: 100%;
-      margin-bottom: 10px;
-      background-color: var(--gray);
+      margin-bottom: 20px;
+      animation: slide-in ease 0.3s;
+      height: 40px;
+
+      display: flex;
+
+      .search-bar {
+        flex-grow: 1;
+        max-width: 100%;
+        min-width: 0;
+      }
+
+      .mask-filter-lang {
+        height: 100%;
+        margin-left: 10px;
+      }
+
+      .mask-create {
+        height: 100%;
+        margin-left: 10px;
+        box-sizing: border-box;
+        min-width: 80px;
+      }
     }
-  
-    .user-prompt-list {
+
+    .mask-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
       border: var(--border-in-light);
-      border-radius: 10px;
-  
-      .user-prompt-item {
+      animation: slide-in ease 0.3s;
+
+      &:not(:last-child) {
+        border-bottom: 0;
+      }
+
+      &:first-child {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+
+      &:last-child {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+
+      .mask-header {
         display: flex;
-        justify-content: space-between;
-        padding: 10px;
-  
-        &:not(:last-child) {
-          border-bottom: var(--border-in-light);
+        align-items: center;
+
+        .mask-icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-right: 10px;
         }
-  
-        .user-prompt-header {
-          max-width: calc(100% - 100px);
-  
-          .user-prompt-title {
+
+        .mask-title {
+          .mask-name {
             font-size: 14px;
-            line-height: 2;
             font-weight: bold;
           }
-          .user-prompt-content {
+          .mask-info {
             font-size: 12px;
           }
         }
-  
-        .user-prompt-buttons {
-          display: flex;
-          align-items: center;
-          column-gap: 2px;
-  
-          .user-prompt-button {
-            //height: 100%;
-            padding: 7px;
-          }
+      }
+
+      .mask-actions {
+        display: flex;
+        flex-wrap: nowrap;
+        transition: all ease 0.3s;
+      }
+
+      @media screen and (max-width: 600px) {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 10px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        box-shadow: var(--card-shadow);
+
+        &:not(:last-child) {
+          border-bottom: var(--border-in-light);
+        }
+
+        .mask-actions {
+          width: 100%;
+          justify-content: space-between;
+          padding-top: 10px;
         }
       }
     }
   }
-  
+}

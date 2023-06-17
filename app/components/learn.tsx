@@ -412,7 +412,11 @@ export function LearnPage() {
           </div>
 
           <div>
-            {masks.map((m) => (
+
+
+
+
+
               <div className={styles["mask-item"]} key={m.id}>
                 <div className={styles["mask-header"]}>
                   <div className={styles["mask-icon"]}>
@@ -462,8 +466,70 @@ export function LearnPage() {
                   )}
                 </div>
               </div>
-            ))}
+
+
+
+
+
+
+
+
+
+            {/* {masks.map((m) => (
+              <div className={styles["mask-item"]} key={m.id}>
+                <div className={styles["mask-header"]}>
+                  <div className={styles["mask-icon"]}>
+                    <MaskAvatar mask={m} />
+                  </div>
+                  <div className={styles["mask-title"]}>
+                    <div className={styles["mask-name"]}>{m.name}</div>
+                    <div className={styles["mask-info"] + " one-line"}>
+                      {`${Locale.Mask.Item.Info(m.context.length)} / ${
+                        ALL_LANG_OPTIONS[m.lang]
+                      } / ${m.modelConfig.model}`}
+                    </div>
+                  </div>
+                </div>
+                <div className={styles["mask-actions"]}>
+                  <IconButton
+                    icon={<AddIcon />}
+                    text={Locale.Mask.Item.Chat}
+                    onClick={() => {
+                      chatStore.newSession(m);
+                      navigate(Path.Chat);
+                    }}
+                  />
+                  {m.builtin ? (
+                    <IconButton
+                      icon={<EyeIcon />}
+                      text={Locale.Mask.Item.View}
+                      onClick={() => setEditingMaskId(m.id)}
+                    />
+                  ) : (
+                    <IconButton
+                      icon={<EditIcon />}
+                      text={Locale.Mask.Item.Edit}
+                      onClick={() => setEditingMaskId(m.id)}
+                    />
+                  )}
+                  {!m.builtin && (
+                    <IconButton
+                      icon={<DeleteIcon />}
+                      text={Locale.Mask.Item.Delete}
+                      onClick={() => {
+                        if (confirm(Locale.Mask.Item.DeleteConfirm)) {
+                          maskStore.delete(m.id);
+                        }
+                      }}
+                    />
+                  )}
+                </div>
+              </div>
+            ))} */}
+
           </div>
+
+
         </div>
       </div>
 

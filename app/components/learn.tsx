@@ -417,7 +417,7 @@ export function LearnPage() {
 
 
 
-              {/* <div className={styles["mask-item"]} key={m.id}>
+              <div className={styles["mask-item"]} key={m.id}>
                 <div className={styles["mask-header"]}>
                   <div className={styles["mask-icon"]}>
                     <MaskAvatar mask={m} />
@@ -465,7 +465,7 @@ export function LearnPage() {
                     />
                   )}
                 </div>
-              </div> */}
+              </div>
 
 
 

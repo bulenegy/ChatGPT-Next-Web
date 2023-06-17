@@ -415,9 +415,11 @@ export function LearnPage() {
           </div>
 
           <div>
-            <div style={{ border: 'solid 2px black', padding: '1rem', width: '300px' }} onClick= {() =>{window.open('http://j.woaichat.com/intro', '_blank')}}>
-              <img src="http://example.com/article.jpg" alt="Article Image" />
-              <h3>Article Title</h3>
+            <div style={{ border: 'solid 2px black', padding: '1rem', width: '300px' }} onClick= {() =>{window.open('https://mp.weixin.qq.com/s?__biz=Mzg5MTk4Mjg2MA==&mid=2247483776&idx=1&sn=656987bcde8b569f8a945eb3ac122046&scene=19#wechat_redirect', '_blank')}}>
+              <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/JR02ZFjCTZpWv4drQJ3icWplHVIqaicTnjeZ4uArYUMMDBkJgibG4fZ0Ykwcia2ktRsot940nAkGib2XAkadxWZJbIA/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="Article Image" />
+              <h3>安卓设备快速使用ChatGPT方式</h3>
+              <p>在系统自带浏览器地址栏中输入woaichat.com</p>
+              
             </div>
 
 

@@ -263,7 +263,7 @@ import { BUILTIN_MASK_STORE } from "../masks";
 
 //a5470 MarkPage=>LearnPage
 export function LearnPage() {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   // const maskStore = useMaskStore();
   // const chatStore = useChatStore();

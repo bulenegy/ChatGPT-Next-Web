@@ -324,36 +324,39 @@ export function LearnPage() {
         <div className="window-header">
           <div className="window-header-title">
             <div className="window-header-main-title">
-              {Locale.Mask.Page.Title}
+              学习中心
+              {/* {Locale.Mask.Page.Title} */}
             </div>
             <div className="window-header-submai-title">
-              {Locale.Mask.Page.SubTitle(allMasks.length)}
+              学习更多ChatGPT使用技巧，尽享AI智能助力
+              {/* {Locale.Mask.Page.SubTitle(allMasks.length)} */}
             </div>
           </div>
 
           <div className="window-actions">
-            <div className="window-action-button">
+
+            {/* a5470 上传、导出按钮 */}
+            {/* <div className="window-action-button">
               <IconButton
                 icon={<DownloadIcon />}
                 bordered
                 onClick={downloadAll}
               />
             </div>
+
             <div className="window-action-button">
               <IconButton
                 icon={<UploadIcon />}
                 bordered
                 onClick={() => importFromFile()}
               />
-            </div>
+            </div> */}
+
             <div className="window-action-button">
               <IconButton
                 icon={<CloseIcon />}
                 bordered
-
-
                 // onClick={() => navigate(-1)}
-
                 onClick={() => navigate(Path.Chat  , { state: { fromHome: true } }) }
               />
             </div>

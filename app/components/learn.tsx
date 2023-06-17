@@ -368,11 +368,14 @@ export function LearnPage() {
             <input
               type="text"
               className={styles["search-bar"]}
-              placeholder={Locale.Mask.Page.Search}
+              // placeholder={Locale.Mask.Page.Search}
+              placeholder="搜索学习教程"
               autoFocus
               onInput={(e) => onSearch(e.currentTarget.value)}
             />
-            <Select
+
+            {/* a5470 */}
+            {/* <Select
               className={styles["mask-filter-lang"]}
               value={filterLang ?? Locale.Settings.Lang.All}
               onChange={(e) => {
@@ -403,7 +406,9 @@ export function LearnPage() {
                 const createdMask = maskStore.create();
                 setEditingMaskId(createdMask.id);
               }}
-            />
+            /> */}
+
+
           </div>
 
           <div>

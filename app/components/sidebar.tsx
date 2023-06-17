@@ -151,7 +151,7 @@ export function SideBar(props: { className?: string }) {
 
           //a5470
           //计划此处开发为学习中心
-          onClick={() => navigate(Path.Learn)}
+          onClick={() => navigate(Path.Learn  , { state: { fromHome: true } }) }
 
 
           shadow

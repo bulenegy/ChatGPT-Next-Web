@@ -321,12 +321,6 @@ export function LearnPage() {
 
 
 
-
-
-
-  export default RectDiv;
-
-
   return (
     <ErrorBoundary>
       <div className={styles["mask-page"]}>

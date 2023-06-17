@@ -350,7 +350,11 @@ export function LearnPage() {
               <IconButton
                 icon={<CloseIcon />}
                 bordered
-                onClick={() => navigate(-1)}
+
+
+                // onClick={() => navigate(-1)}
+
+                onClick={() => navigate(Path.Chat  , { state: { fromHome: true } }) }
               />
             </div>
           </div>

@@ -260,7 +260,9 @@ export function ContextPrompts(props: {
   );
 }
 
-export function MaskPage() {
+
+//a5470 MarkPage=>LearnPage
+export function LearnPage() {
   const navigate = useNavigate();
 
   const maskStore = useMaskStore();

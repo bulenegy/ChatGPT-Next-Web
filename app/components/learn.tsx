@@ -320,6 +320,19 @@ export function LearnPage() {
 
 
 
+  const RectDiv = () => {
+
+    const handleClick = () => {
+      window.open('http://j.woaichat.com/intro', '_blank');
+    }
+
+    return (
+      <div style={{ border: 'solid 2px black', padding: '1rem', width: '300px' }} onClick={handleClick}>
+        <img src="http://example.com/article.jpg" alt="Article Image" />
+        <h3>Article Title</h3>
+      </div>
+    );
+  };
 
 
 
@@ -423,19 +436,6 @@ export function LearnPage() {
           <div>
 
 
-          const RectDiv = () => {
-
-              const handleClick = () => {
-              window.open('http://j.woaichat.com/intro', '_blank');
-              }
-
-            return (
-            <div style={{ border: 'solid 2px black', padding: '1rem', width: '300px' }} onClick={handleClick}>
-              <img src="http://example.com/article.jpg" alt="Article Image" />
-              <h3>Article Title</h3>
-            </div>
-            );
-              };
 
 
 

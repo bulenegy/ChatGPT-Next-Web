@@ -28,295 +28,295 @@ import { ModelConfigList } from "./model-config";
 import { FileName, Path } from "../constant";
 import { BUILTIN_MASK_STORE } from "../masks";
 
-export function MaskAvatar(props: { mask: Mask }) {
-  return props.mask.avatar !== DEFAULT_MASK_AVATAR ? (
-    <Avatar avatar={props.mask.avatar} />
-  ) : (
-    <Avatar model={props.mask.modelConfig.model} />
-  );
-}
+// export function MaskAvatar(props: { mask: Mask }) {
+//   return props.mask.avatar !== DEFAULT_MASK_AVATAR ? (
+//     <Avatar avatar={props.mask.avatar} />
+//   ) : (
+//     <Avatar model={props.mask.modelConfig.model} />
+//   );
+// }
 
-export function MaskConfig(props: {
-  mask: Mask;
-  updateMask: Updater<Mask>;
-  extraListItems?: JSX.Element;
-  readonly?: boolean;
-  shouldSyncFromGlobal?: boolean;
-}) {
-  const [showPicker, setShowPicker] = useState(false);
+// export function MaskConfig(props: {
+//   mask: Mask;
+//   updateMask: Updater<Mask>;
+//   extraListItems?: JSX.Element;
+//   readonly?: boolean;
+//   shouldSyncFromGlobal?: boolean;
+// }) {
+//   const [showPicker, setShowPicker] = useState(false);
 
-  const updateConfig = (updater: (config: ModelConfig) => void) => {
-    if (props.readonly) return;
+//   const updateConfig = (updater: (config: ModelConfig) => void) => {
+//     if (props.readonly) return;
 
-    const config = { ...props.mask.modelConfig };
-    updater(config);
-    props.updateMask((mask) => {
-      mask.modelConfig = config;
-      // if user changed current session mask, it will disable auto sync
-      mask.syncGlobalConfig = false;
-    });
-  };
+//     const config = { ...props.mask.modelConfig };
+//     updater(config);
+//     props.updateMask((mask) => {
+//       mask.modelConfig = config;
+//       // if user changed current session mask, it will disable auto sync
+//       mask.syncGlobalConfig = false;
+//     });
+//   };
 
-  const globalConfig = useAppConfig();
+//   const globalConfig = useAppConfig();
 
-  return (
-    <>
-      <ContextPrompts
-        context={props.mask.context}
-        updateContext={(updater) => {
-          const context = props.mask.context.slice();
-          updater(context);
-          props.updateMask((mask) => (mask.context = context));
-        }}
-      />
+//   return (
+//     <>
+//       <ContextPrompts
+//         context={props.mask.context}
+//         updateContext={(updater) => {
+//           const context = props.mask.context.slice();
+//           updater(context);
+//           props.updateMask((mask) => (mask.context = context));
+//         }}
+//       />
 
-      <List>
-        <ListItem title={Locale.Mask.Config.Avatar}>
-          <Popover
-            content={
-              <AvatarPicker
-                onEmojiClick={(emoji) => {
-                  props.updateMask((mask) => (mask.avatar = emoji));
-                  setShowPicker(false);
-                }}
-              ></AvatarPicker>
-            }
-            open={showPicker}
-            onClose={() => setShowPicker(false)}
-          >
-            <div
-              onClick={() => setShowPicker(true)}
-              style={{ cursor: "pointer" }}
-            >
-              <MaskAvatar mask={props.mask} />
-            </div>
-          </Popover>
-        </ListItem>
-        <ListItem title={Locale.Mask.Config.Name}>
-          <input
-            type="text"
-            value={props.mask.name}
-            onInput={(e) =>
-              props.updateMask((mask) => {
-                mask.name = e.currentTarget.value;
-              })
-            }
-          ></input>
-        </ListItem>
-        <ListItem
-          title={Locale.Mask.Config.HideContext.Title}
-          subTitle={Locale.Mask.Config.HideContext.SubTitle}
-        >
-          <input
-            type="checkbox"
-            checked={props.mask.hideContext}
-            onChange={(e) => {
-              props.updateMask((mask) => {
-                mask.hideContext = e.currentTarget.checked;
-              });
-            }}
-          ></input>
-        </ListItem>
-        {props.shouldSyncFromGlobal ? (
-          <ListItem
-            title={Locale.Mask.Config.Sync.Title}
-            subTitle={Locale.Mask.Config.Sync.SubTitle}
-          >
-            <input
-              type="checkbox"
-              checked={props.mask.syncGlobalConfig}
-              onChange={(e) => {
-                if (
-                  e.currentTarget.checked &&
-                  confirm(Locale.Mask.Config.Sync.Confirm)
-                ) {
-                  props.updateMask((mask) => {
-                    mask.syncGlobalConfig = e.currentTarget.checked;
-                    mask.modelConfig = { ...globalConfig.modelConfig };
-                  });
-                }
-              }}
-            ></input>
-          </ListItem>
-        ) : null}
-      </List>
+//       <List>
+//         <ListItem title={Locale.Mask.Config.Avatar}>
+//           <Popover
+//             content={
+//               <AvatarPicker
+//                 onEmojiClick={(emoji) => {
+//                   props.updateMask((mask) => (mask.avatar = emoji));
+//                   setShowPicker(false);
+//                 }}
+//               ></AvatarPicker>
+//             }
+//             open={showPicker}
+//             onClose={() => setShowPicker(false)}
+//           >
+//             <div
+//               onClick={() => setShowPicker(true)}
+//               style={{ cursor: "pointer" }}
+//             >
+//               <MaskAvatar mask={props.mask} />
+//             </div>
+//           </Popover>
+//         </ListItem>
+//         <ListItem title={Locale.Mask.Config.Name}>
+//           <input
+//             type="text"
+//             value={props.mask.name}
+//             onInput={(e) =>
+//               props.updateMask((mask) => {
+//                 mask.name = e.currentTarget.value;
+//               })
+//             }
+//           ></input>
+//         </ListItem>
+//         <ListItem
+//           title={Locale.Mask.Config.HideContext.Title}
+//           subTitle={Locale.Mask.Config.HideContext.SubTitle}
+//         >
+//           <input
+//             type="checkbox"
+//             checked={props.mask.hideContext}
+//             onChange={(e) => {
+//               props.updateMask((mask) => {
+//                 mask.hideContext = e.currentTarget.checked;
+//               });
+//             }}
+//           ></input>
+//         </ListItem>
+//         {props.shouldSyncFromGlobal ? (
+//           <ListItem
+//             title={Locale.Mask.Config.Sync.Title}
+//             subTitle={Locale.Mask.Config.Sync.SubTitle}
+//           >
+//             <input
+//               type="checkbox"
+//               checked={props.mask.syncGlobalConfig}
+//               onChange={(e) => {
+//                 if (
+//                   e.currentTarget.checked &&
+//                   confirm(Locale.Mask.Config.Sync.Confirm)
+//                 ) {
+//                   props.updateMask((mask) => {
+//                     mask.syncGlobalConfig = e.currentTarget.checked;
+//                     mask.modelConfig = { ...globalConfig.modelConfig };
+//                   });
+//                 }
+//               }}
+//             ></input>
+//           </ListItem>
+//         ) : null}
+//       </List>
 
-      <List>
-        <ModelConfigList
-          modelConfig={{ ...props.mask.modelConfig }}
-          updateConfig={updateConfig}
-        />
-        {props.extraListItems}
-      </List>
-    </>
-  );
-}
+//       <List>
+//         <ModelConfigList
+//           modelConfig={{ ...props.mask.modelConfig }}
+//           updateConfig={updateConfig}
+//         />
+//         {props.extraListItems}
+//       </List>
+//     </>
+//   );
+// }
 
-function ContextPromptItem(props: {
-  prompt: ChatMessage;
-  update: (prompt: ChatMessage) => void;
-  remove: () => void;
-}) {
-  const [focusingInput, setFocusingInput] = useState(false);
+// function ContextPromptItem(props: {
+//   prompt: ChatMessage;
+//   update: (prompt: ChatMessage) => void;
+//   remove: () => void;
+// }) {
+//   const [focusingInput, setFocusingInput] = useState(false);
 
-  return (
-    <div className={chatStyle["context-prompt-row"]}>
-      {!focusingInput && (
-        <Select
-          value={props.prompt.role}
-          className={chatStyle["context-role"]}
-          onChange={(e) =>
-            props.update({
-              ...props.prompt,
-              role: e.target.value as any,
-            })
-          }
-        >
-          {ROLES.map((r) => (
-            <option key={r} value={r}>
-              {r}
-            </option>
-          ))}
-        </Select>
-      )}
-      <Input
-        value={props.prompt.content}
-        type="text"
-        className={chatStyle["context-content"]}
-        rows={focusingInput ? 5 : 1}
-        onFocus={() => setFocusingInput(true)}
-        onBlur={() => {
-          setFocusingInput(false);
-          // If the selection is not removed when the user loses focus, some
-          // extensions like "Translate" will always display a floating bar
-          window?.getSelection()?.removeAllRanges();
-        }}
-        onInput={(e) =>
-          props.update({
-            ...props.prompt,
-            content: e.currentTarget.value as any,
-          })
-        }
-      />
-      {!focusingInput && (
-        <IconButton
-          icon={<DeleteIcon />}
-          className={chatStyle["context-delete-button"]}
-          onClick={() => props.remove()}
-          bordered
-        />
-      )}
-    </div>
-  );
-}
+//   return (
+//     <div className={chatStyle["context-prompt-row"]}>
+//       {!focusingInput && (
+//         <Select
+//           value={props.prompt.role}
+//           className={chatStyle["context-role"]}
+//           onChange={(e) =>
+//             props.update({
+//               ...props.prompt,
+//               role: e.target.value as any,
+//             })
+//           }
+//         >
+//           {ROLES.map((r) => (
+//             <option key={r} value={r}>
+//               {r}
+//             </option>
+//           ))}
+//         </Select>
+//       )}
+//       <Input
+//         value={props.prompt.content}
+//         type="text"
+//         className={chatStyle["context-content"]}
+//         rows={focusingInput ? 5 : 1}
+//         onFocus={() => setFocusingInput(true)}
+//         onBlur={() => {
+//           setFocusingInput(false);
+//           // If the selection is not removed when the user loses focus, some
+//           // extensions like "Translate" will always display a floating bar
+//           window?.getSelection()?.removeAllRanges();
+//         }}
+//         onInput={(e) =>
+//           props.update({
+//             ...props.prompt,
+//             content: e.currentTarget.value as any,
+//           })
+//         }
+//       />
+//       {!focusingInput && (
+//         <IconButton
+//           icon={<DeleteIcon />}
+//           className={chatStyle["context-delete-button"]}
+//           onClick={() => props.remove()}
+//           bordered
+//         />
+//       )}
+//     </div>
+//   );
+// }
 
-export function ContextPrompts(props: {
-  context: ChatMessage[];
-  updateContext: (updater: (context: ChatMessage[]) => void) => void;
-}) {
-  const context = props.context;
+// export function ContextPrompts(props: {
+//   context: ChatMessage[];
+//   updateContext: (updater: (context: ChatMessage[]) => void) => void;
+// }) {
+//   const context = props.context;
 
-  const addContextPrompt = (prompt: ChatMessage) => {
-    props.updateContext((context) => context.push(prompt));
-  };
+//   const addContextPrompt = (prompt: ChatMessage) => {
+//     props.updateContext((context) => context.push(prompt));
+//   };
 
-  const removeContextPrompt = (i: number) => {
-    props.updateContext((context) => context.splice(i, 1));
-  };
+//   const removeContextPrompt = (i: number) => {
+//     props.updateContext((context) => context.splice(i, 1));
+//   };
 
-  const updateContextPrompt = (i: number, prompt: ChatMessage) => {
-    props.updateContext((context) => (context[i] = prompt));
-  };
+//   const updateContextPrompt = (i: number, prompt: ChatMessage) => {
+//     props.updateContext((context) => (context[i] = prompt));
+//   };
 
-  return (
-    <>
-      <div className={chatStyle["context-prompt"]} style={{ marginBottom: 20 }}>
-        {context.map((c, i) => (
-          <ContextPromptItem
-            key={i}
-            prompt={c}
-            update={(prompt) => updateContextPrompt(i, prompt)}
-            remove={() => removeContextPrompt(i)}
-          />
-        ))}
+//   return (
+//     <>
+//       <div className={chatStyle["context-prompt"]} style={{ marginBottom: 20 }}>
+//         {context.map((c, i) => (
+//           <ContextPromptItem
+//             key={i}
+//             prompt={c}
+//             update={(prompt) => updateContextPrompt(i, prompt)}
+//             remove={() => removeContextPrompt(i)}
+//           />
+//         ))}
 
-        <div className={chatStyle["context-prompt-row"]}>
-          <IconButton
-            icon={<AddIcon />}
-            text={Locale.Context.Add}
-            bordered
-            className={chatStyle["context-prompt-button"]}
-            onClick={() =>
-              addContextPrompt({
-                role: "user",
-                content: "",
-                date: "",
-              })
-            }
-          />
-        </div>
-      </div>
-    </>
-  );
-}
+//         <div className={chatStyle["context-prompt-row"]}>
+//           <IconButton
+//             icon={<AddIcon />}
+//             text={Locale.Context.Add}
+//             bordered
+//             className={chatStyle["context-prompt-button"]}
+//             onClick={() =>
+//               addContextPrompt({
+//                 role: "user",
+//                 content: "",
+//                 date: "",
+//               })
+//             }
+//           />
+//         </div>
+//       </div>
+//     </>
+//   );
+// }
 
 
 //a5470 MarkPage=>LearnPage
 export function LearnPage() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const maskStore = useMaskStore();
-  const chatStore = useChatStore();
+  // const maskStore = useMaskStore();
+  // const chatStore = useChatStore();
 
-  const [filterLang, setFilterLang] = useState<Lang>();
+  // const [filterLang, setFilterLang] = useState<Lang>();
 
-  const allMasks = maskStore
-    .getAll()
-    .filter((m) => !filterLang || m.lang === filterLang);
+  // const allMasks = maskStore
+  //   .getAll()
+  //   .filter((m) => !filterLang || m.lang === filterLang);
 
-  const [searchMasks, setSearchMasks] = useState<Mask[]>([]);
-  const [searchText, setSearchText] = useState("");
-  const masks = searchText.length > 0 ? searchMasks : allMasks;
+  // const [searchMasks, setSearchMasks] = useState<Mask[]>([]);
+  // const [searchText, setSearchText] = useState("");
+  // const masks = searchText.length > 0 ? searchMasks : allMasks;
 
-  // simple search, will refactor later
-  const onSearch = (text: string) => {
-    setSearchText(text);
-    if (text.length > 0) {
-      const result = allMasks.filter((m) => m.name.includes(text));
-      setSearchMasks(result);
-    } else {
-      setSearchMasks(allMasks);
-    }
-  };
+  // // simple search, will refactor later
+  // const onSearch = (text: string) => {
+  //   setSearchText(text);
+  //   if (text.length > 0) {
+  //     const result = allMasks.filter((m) => m.name.includes(text));
+  //     setSearchMasks(result);
+  //   } else {
+  //     setSearchMasks(allMasks);
+  //   }
+  // };
 
-  const [editingMaskId, setEditingMaskId] = useState<number | undefined>();
-  const editingMask =
-    maskStore.get(editingMaskId) ?? BUILTIN_MASK_STORE.get(editingMaskId);
-  const closeMaskModal = () => setEditingMaskId(undefined);
+  // const [editingMaskId, setEditingMaskId] = useState<number | undefined>();
+  // const editingMask =
+  //   maskStore.get(editingMaskId) ?? BUILTIN_MASK_STORE.get(editingMaskId);
+  // const closeMaskModal = () => setEditingMaskId(undefined);
 
-  const downloadAll = () => {
-    downloadAs(JSON.stringify(masks), FileName.Masks);
-  };
+  // const downloadAll = () => {
+  //   downloadAs(JSON.stringify(masks), FileName.Masks);
+  // };
 
-  const importFromFile = () => {
-    readFromFile().then((content) => {
-      try {
-        const importMasks = JSON.parse(content);
-        if (Array.isArray(importMasks)) {
-          for (const mask of importMasks) {
-            if (mask.name) {
-              maskStore.create(mask);
-            }
-          }
-          return;
-        }
-        //if the content is a single mask.
-        if (importMasks.name) {
-          maskStore.create(importMasks);
-        }
-      } catch { }
-    });
-  };
+  // const importFromFile = () => {
+  //   readFromFile().then((content) => {
+  //     try {
+  //       const importMasks = JSON.parse(content);
+  //       if (Array.isArray(importMasks)) {
+  //         for (const mask of importMasks) {
+  //           if (mask.name) {
+  //             maskStore.create(mask);
+  //           }
+  //         }
+  //         return;
+  //       }
+  //       //if the content is a single mask.
+  //       if (importMasks.name) {
+  //         maskStore.create(importMasks);
+  //       }
+  //     } catch { }
+  //   });
+  // };
 
 
 
@@ -338,28 +338,11 @@ export function LearnPage() {
 
           <div className="window-actions">
 
-            {/* a5470 上传、导出按钮 */}
-            {/* <div className="window-action-button">
-              <IconButton
-                icon={<DownloadIcon />}
-                bordered
-                onClick={downloadAll}
-              />
-            </div>
-
-            <div className="window-action-button">
-              <IconButton
-                icon={<UploadIcon />}
-                bordered
-                onClick={() => importFromFile()}
-              />
-            </div> */}
 
             <div className="window-action-button">
               <IconButton
                 icon={<CloseIcon />}
                 bordered
-                // onClick={() => navigate(-1)}
                 onClick={() => navigate(Path.Home)}
               />
             </div>
@@ -383,47 +366,6 @@ export function LearnPage() {
             </div>
       </div>
 
-      {editingMask && (
-        <div className="modal-mask">
-          <Modal
-            title={Locale.Mask.EditModal.Title(editingMask?.builtin)}
-            onClose={closeMaskModal}
-            actions={[
-              <IconButton
-                icon={<DownloadIcon />}
-                text={Locale.Mask.EditModal.Download}
-                key="export"
-                bordered
-                onClick={() =>
-                  downloadAs(
-                    JSON.stringify(editingMask),
-                    `${editingMask.name}.json`,
-                  )
-                }
-              />,
-              <IconButton
-                key="copy"
-                icon={<CopyIcon />}
-                bordered
-                text={Locale.Mask.EditModal.Clone}
-                onClick={() => {
-                  navigate(Path.Masks);
-                  maskStore.create(editingMask);
-                  setEditingMaskId(undefined);
-                }}
-              />,
-            ]}
-          >
-            <MaskConfig
-              mask={editingMask}
-              updateMask={(updater) =>
-                maskStore.update(editingMaskId!, updater)
-              }
-              readonly={editingMask.builtin}
-            />
-          </Modal>
-        </div>
-      )}
     </ErrorBoundary>
   );
 }

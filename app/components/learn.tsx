@@ -51,6 +51,8 @@ export function LearnPage() {
           </div>
         </div>
 
+        <div style={{ padding: '1rem' }}>
+
           <div className="LearnConten">
             <div className="article" onClick= {() =>{window.open('https://mp.weixin.qq.com/s?__biz=Mzg5MTk4Mjg2MA==&mid=2247483776&idx=1&sn=656987bcde8b569f8a945eb3ac122046&scene=19#wechat_redirect', '_blank')}}>
               <a>ChatGPT</a>
@@ -82,6 +84,7 @@ export function LearnPage() {
               <a>安卓设备快速使用ChatGPT方式</a>
             </div>
           </div>
+        </div>
 
       </div>
 

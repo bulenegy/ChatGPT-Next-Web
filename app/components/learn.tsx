@@ -3,7 +3,7 @@ import { ErrorBoundary } from "./error";
 
 import styles from "./mask.module.scss";
 
-import "./mask.module.scss";
+import "./learn.scss";
 
 import CloseIcon from "../icons/close.svg";
 

@@ -18,6 +18,9 @@ interface Article {
 export function LearnPage() {
   const navigate = useNavigate();
   const [articles, setArticles] = useState<Article[]>([]);
+  const FileName = {
+    Article: "../learn/article.json",
+  };
 
   useEffect(() => {
     fetch(FileName.Article)

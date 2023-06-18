@@ -71,8 +71,12 @@ export function LearnPage() {
         </div>
         <div style={{ padding: "1rem", overflow: "scroll" }}>
           <div className="LearnConten">
-            {articles.map((article: { id: any; }) => (
-
+            {articles.map((article: {
+                            id: number;
+                            name: string;
+                            link: string;
+                            image: string;
+                          }) => (
               <Article key={article.id} article={article} />
             ))}
 

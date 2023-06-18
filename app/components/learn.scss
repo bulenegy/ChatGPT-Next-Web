@@ -108,15 +108,11 @@
 }
 
 
-.aritc {
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-  align-items: left;
-  padding: 10px;
-  border: 2px solid #ccc;
-  border-radius: 5px;
-  .aritc-title {
+.article {
+  border: solid 2px gray;
+  max-width: 30%;
+  border-radius: 3px;
+  .article-title {
     font-size: 20px;
     text-decoration: none;
     color: #000;
@@ -125,12 +121,18 @@
       color: #1f60ff;
     }
   }
-  .aritc-text {
+  .article-text {
     margin-top: 10px;
-    img {
-      max-width: 20%;
-      border-radius: 5px;
-      margin-right: 10px;
-    }
+    
   }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  @media screen and (max-width: 600px) {
+    max-width: 100%;
 }
+
+
+
+

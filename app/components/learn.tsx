@@ -67,6 +67,20 @@ export function LearnPage() {
 
               {/* <h3>安卓设备快速使用ChatGPT方式</h3>              */}
             </div>
+
+
+            <div >
+              <a href="https://www.cnblogs.com/tangyanzhi1111/p/17481579.html" target="_blank">
+                .Net7发现 System.Numerics.Vector 矢量化的一个 bug, Issues 给了 dotnet 团队
+              </a>
+              <p >
+                <a href="https://www.cnblogs.com/tangyanzhi1111/">
+                  <img src="https://pic.cnblogs.com/face/490844/20221020190555.png"  alt="博主头像" />
+                </a>
+                因为前几天做.Net7的矢量化性能优化，发现了一个 bug。在类 System.Numerics.Vector 里面的成员变量 IsHardwareAccelerated。但是实际上不确定这个 bug 是 visual studio 2022 的还是System.Numerics.Vector库的，个人认为应该是前 ...
+              </p>
+            </div>
+
       </div>
 
       <div style={{ 

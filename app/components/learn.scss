@@ -108,6 +108,12 @@
 }
 
 
+.LearnConten {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 .article {
   border: solid 2px gray;
   max-width: 30%;

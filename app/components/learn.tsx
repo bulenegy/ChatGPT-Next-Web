@@ -57,7 +57,7 @@ export function LearnPage() {
             <div className="article" onClick= {() =>{window.open('https://mp.weixin.qq.com/s?__biz=Mzg5MTk4Mjg2MA==&mid=2247483731&idx=1&sn=8c9c43e08367084179fc55ebc2ca6a5d&scene=19#wechat_redirect', '_blank')}}>
               {/* <a>ChatGPT</a> */}
               <img src="https://alicliimg.clewm.net/744/317/2317744/16870602408992e645b9155cf2ec0804c9991f37070541687060233.png" alt="Article Image" />  
-              {/* <a>如何使用ChatGPT？</a> */}
+              <a>如何使用ChatGPT？</a>
             </div>
 
             <div className="article" onClick= {() =>{window.open('https://mp.weixin.qq.com/s?__biz=Mzg5MTk4Mjg2MA==&mid=2247483776&idx=1&sn=656987bcde8b569f8a945eb3ac122046&scene=19#wechat_redirect', '_blank')}}>

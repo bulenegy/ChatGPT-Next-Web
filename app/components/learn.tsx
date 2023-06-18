@@ -13,20 +13,26 @@ import { useNavigate } from "react-router-dom";
 
 import { FileName, Path } from "../constant";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
+
+
 
 
 
 //a5470 MarkPage=>LearnPage
 export function LearnPage() {
-  const [articles, setArticles] = useState([]);
+
   const navigate = useNavigate();
+  const [articles, setArticles] = useState([]);
 
   useEffect(() => {
-    fetch("../learn/article.json")
-      .then(response => response.json())
-      .then(data => setArticles(data));
+    fetch('../learn/article.json')
+      .then(res => res.json())
+      .then(data => setArticles(data.articles.sort((a, b) => a.id - b.id))) // 按文章id从小到大排序
+      .catch(error => console.error(error));
   }, []);
+
+
 
 
 
@@ -59,21 +65,16 @@ export function LearnPage() {
           </div>
         </div>
 
-        <div style={{ padding: "1rem", overflow: "scroll" }}>
-          <div className="LearnContent">
-            {articles.map((item) => (
-              <div
-                key={item.id}
-                className="article"
-                onClick={() => window.open(item.link, "_blank")}
-              >
-                <img src={item.image} alt="Article Image" />
-                <a>{item.title}</a>
+        <div style={{ padding: '1rem', overflow: 'scroll' }}>
+          <div className="LearnConten">
+            {articles.map(article => (
+              <div className="article" key={article.id} onClick={() => window.open(article.link, '_blank')}>
+                <img src={article.image} alt="Article Image" />
+                <a>{article.name}</a>
               </div>
             ))}
           </div>
         </div>
-
 
 
 

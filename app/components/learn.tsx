@@ -65,7 +65,7 @@ export function LearnPage() {
                   height: 'auto',
                   
                 }}/>
-              <p>安卓设备快速使用ChatGPT方式</p>
+              <a>安卓设备快速使用ChatGPT方式</a>
 
               {/* <h3>安卓设备快速使用ChatGPT方式</h3>              */}
             </div>

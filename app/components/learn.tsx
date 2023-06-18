@@ -23,7 +23,7 @@ export function LearnPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("article.json")
+    fetch("../learn/article.json")
       .then(response => response.json())
       .then(data => setArticles(data));
   }, []);

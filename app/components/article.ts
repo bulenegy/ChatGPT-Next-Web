@@ -7,7 +7,7 @@ type Article = {
   
   const articleList: Article[] = [
     {
-      id: 1,
+      id: 1123,
       name: '如何使用ChatGPT？',
       link:
         'https://mp.weixin.qq.com/s?__biz=Mzg5MTk4Mjg2MA==&mid=2247483731&idx=1&sn=8c9c43e08367084179fc55ebc2ca6a5d&scene=19#wechat_redirect',
@@ -15,7 +15,7 @@ type Article = {
         'https://alicliimg.clewm.net/744/317/2317744/16870602408992e645b9155cf2ec0804c9991f37070541687060233.png',
     },
     {
-      id: 2,
+      id: 254,
       name: '安卓设备快速使用ChatGPT方式',
       link:
         'https://mp.weixin.qq.com/s?__biz=Mzg5MTk4Mjg2MA==&mid=2247483776&idx=1&sn=656987bcde8b569f8a945eb3ac122046&scene=19#wechat_redirect',

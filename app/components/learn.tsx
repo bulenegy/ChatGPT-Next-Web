@@ -37,13 +37,14 @@ export function LearnPage() {
         </div>
         <div style={{ padding: '1rem', overflow: 'scroll' }}>
           <div className="LearnConten">
-            {articleList.map((article) => (
+            {articleList.sort((a, b) => a.id - b.id).map((article) => (
               <div key={article.id} className="article" onClick={() => window.open(article.link, '_blank')}>
                 <img src={article.image} alt="Article Image" />
                 <a>{article.name}</a>
               </div>
             ))}
           </div>
+
         </div>
       </div>
     </ErrorBoundary>

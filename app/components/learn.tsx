@@ -53,6 +53,7 @@ export function LearnPage() {
         
             <div style={{ 
                   border: 'solid 2px gray', 
+
                   maxWidth: '30%',
                   borderRadius: '3px'
                 }} 
@@ -67,6 +68,23 @@ export function LearnPage() {
               {/* <h3>安卓设备快速使用ChatGPT方式</h3>              */}
             </div>
       </div>
+
+      <div style={{ 
+                  border: 'solid 2px gray', 
+                  padding: '10px',
+                  maxWidth: '30%',
+                  borderRadius: '3px'
+                }} 
+                onClick= {() =>{window.open('https://mp.weixin.qq.com/s?__biz=Mzg5MTk4Mjg2MA==&mid=2247483776&idx=1&sn=656987bcde8b569f8a945eb3ac122046&scene=19#wechat_redirect', '_blank')}}>
+              <img src="https://alicliimg.clewm.net/744/317/2317744/1687004951324fee7aede13c1606f5f21e4acc0bf78261687004949.png" alt="Article Image" style={{
+                  maxWidth: '100%',
+                  height: 'auto',
+                  borderRadius: '3px'
+                }}/>
+                <p>安卓设备快速使用ChatGPT方式</p>
+
+              {/* <h3>安卓设备快速使用ChatGPT方式</h3>              */}
+            </div>
 
     </ErrorBoundary>
   );

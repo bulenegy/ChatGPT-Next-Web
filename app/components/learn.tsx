@@ -28,7 +28,7 @@ export function LearnPage() {
   useEffect(() => {
     fetch('../learn/article.json')
       .then(res => res.json())
-      .then(data => setArticles(data.articles.sort((a, b) => a.id - b.id))) // 按文章id从小到大排序
+      .then(data => setArticles(data.articles.sort((a: {id: number}, b: {id: number}) => a.id - b.id))) // 按文章id从小到大排序
       .catch(error => console.error(error));
   }, []);
 

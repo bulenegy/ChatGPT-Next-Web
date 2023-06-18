@@ -51,7 +51,7 @@ export function LearnPage() {
           </div>
         </div>
 
-        <div style={{ padding: '1rem' }}>
+        <div style={{ padding: '1rem', overflow: 'scroll' }}>
 
           <div className="LearnConten">
             <div className="article" onClick= {() =>{window.open('https://mp.weixin.qq.com/s?__biz=Mzg5MTk4Mjg2MA==&mid=2247483776&idx=1&sn=656987bcde8b569f8a945eb3ac122046&scene=19#wechat_redirect', '_blank')}}>

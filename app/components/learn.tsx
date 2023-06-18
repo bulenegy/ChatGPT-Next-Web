@@ -6,7 +6,7 @@ import CloseIcon from "../icons/close.svg";
 import { useNavigate } from "react-router-dom";
 import { FileName, Path } from "../constant";
 import React, { useState, useEffect } from 'react';
-import articleData from "../learn/article.json";
+import articleData from "./article.json";
 
 interface Article {
   id: number;
@@ -19,8 +19,9 @@ export function LearnPage() {
   const navigate = useNavigate();
   const [articles, setArticles] = useState<Article[]>([]);
   const FileName = {
-    Article: "../learn/article.json",
+    Article: "./article.json",
   };
+  
 
   useEffect(() => {
     fetch(FileName.Article)

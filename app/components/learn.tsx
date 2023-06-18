@@ -13,12 +13,20 @@ import { useNavigate } from "react-router-dom";
 
 import { FileName, Path } from "../constant";
 
+import React, { useState, useEffect } from "react";
 
 
 
 //a5470 MarkPage=>LearnPage
 export function LearnPage() {
+  const [articles, setArticles] = useState([]);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    fetch("article.json")
+      .then(response => response.json())
+      .then(data => setArticles(data));
+  }, []);
 
 
 
@@ -51,16 +59,18 @@ export function LearnPage() {
           </div>
         </div>
 
-        <div style={{padding: '1rem', overflow: 'scroll'}}>
-          <div className="LearnConten">
-            {fetch("../learn/article.json")
-              .then(response => response.json())
-              .then(data => data.map((item) => (
-                <div key={item.id} className="article" onClick={() => window.open(item.link, '_blank')}>
-                  <img src={item.image} alt="Article Image" />
-                  <a>{item.title}</a>
-                </div>
-              )))}
+        <div style={{ padding: "1rem", overflow: "scroll" }}>
+          <div className="LearnContent">
+            {articles.map((item) => (
+              <div
+                key={item.id}
+                className="article"
+                onClick={() => window.open(item.link, "_blank")}
+              >
+                <img src={item.image} alt="Article Image" />
+                <a>{item.title}</a>
+              </div>
+            ))}
           </div>
         </div>
 

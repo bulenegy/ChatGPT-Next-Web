@@ -61,25 +61,25 @@ export function LearnPage() {
             </div>
 
             <div className="article" onClick= {() =>{window.open('https://mp.weixin.qq.com/s?__biz=Mzg5MTk4Mjg2MA==&mid=2247483776&idx=1&sn=656987bcde8b569f8a945eb3ac122046&scene=19#wechat_redirect', '_blank')}}>
-              <a>ChatGPT</a>
+              
               <img src="https://alicliimg.clewm.net/744/317/2317744/1687004951324fee7aede13c1606f5f21e4acc0bf78261687004949.png" alt="Article Image" />  
               <a>安卓设备快速使用ChatGPT方式</a>
             </div>
 
             <div className="article" onClick= {() =>{window.open('https://mp.weixin.qq.com/s?__biz=Mzg5MTk4Mjg2MA==&mid=2247483767&idx=1&sn=25afd8de4804e4e3e97df27d6386ce42&scene=19#wechat_redirect', '_blank')}}>
-              <a>ChatGPT</a>
+              
               <img src="https://alicliimg.clewm.net/744/317/2317744/1687060325770e640c73515bffa1db1329c12da5d14e01687060324.png" alt="Article Image" />  
               <a>iOS设备快速使用ChatGPT方式</a>
             </div>
 
             <div className="article" onClick= {() =>{window.open('https://mp.weixin.qq.com/s?__biz=Mzg5MTk4Mjg2MA==&mid=2247483776&idx=1&sn=656987bcde8b569f8a945eb3ac122046&scene=19#wechat_redirect', '_blank')}}>
-              <a>ChatGPT</a>
+              
               <img src="https://alicliimg.clewm.net/744/317/2317744/1687004951324fee7aede13c1606f5f21e4acc0bf78261687004949.png" alt="Article Image" />  
               <a>安卓设备快速使用ChatGPT方式</a>
             </div>
 
             <div className="article" onClick= {() =>{window.open('https://mp.weixin.qq.com/s?__biz=Mzg5MTk4Mjg2MA==&mid=2247483776&idx=1&sn=656987bcde8b569f8a945eb3ac122046&scene=19#wechat_redirect', '_blank')}}>
-              <a>ChatGPT</a>
+              
               <img src="https://alicliimg.clewm.net/744/317/2317744/1687004951324fee7aede13c1606f5f21e4acc0bf78261687004949.png" alt="Article Image" />  
               <a>安卓设备快速使用ChatGPT方式</a>
             </div>

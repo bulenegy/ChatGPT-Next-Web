@@ -33,7 +33,7 @@ export function LearnPage() {
               {/* {Locale.Mask.Page.Title} */}
             </div>
             <div className="window-header-submai-title">
-              学习更多ChatGPT使用技巧，尽享AI智能助力
+              学习更多ChatGPT使用技巧
               {/* {Locale.Mask.Page.SubTitle(allMasks.length)} */}
             </div>
           </div>

@@ -51,11 +51,26 @@ export function LearnPage() {
           </div>
         </div>
 
-        <div style={{ padding: '1rem', overflow: 'scroll' }}>
+        <div style={{padding: '1rem', overflow: 'scroll'}}>
+          <div className="LearnConten">
+            {fetch("../learn/article.json")
+              .then(response => response.json())
+              .then(data => data.map((item) => (
+                <div key={item.id} className="article" onClick={() => window.open(item.link, '_blank')}>
+                  <img src={item.image} alt="Article Image" />
+                  <a>{item.title}</a>
+                </div>
+              )))}
+          </div>
+        </div>
+
+
+
+
+        {/* <div style={{ padding: '1rem', overflow: 'scroll' }}>
 
           <div className="LearnConten">
             <div className="article" onClick= {() =>{window.open('https://mp.weixin.qq.com/s?__biz=Mzg5MTk4Mjg2MA==&mid=2247483731&idx=1&sn=8c9c43e08367084179fc55ebc2ca6a5d&scene=19#wechat_redirect', '_blank')}}>
-              {/* <a>ChatGPT</a> */}
               <img src="https://alicliimg.clewm.net/744/317/2317744/16870602408992e645b9155cf2ec0804c9991f37070541687060233.png" alt="Article Image" />  
               <a>如何使用ChatGPT？</a>
             </div>
@@ -84,7 +99,7 @@ export function LearnPage() {
               <a>安卓设备快速使用ChatGPT方式</a>
             </div>
           </div>
-        </div>
+        </div> */}
 
       </div>
 

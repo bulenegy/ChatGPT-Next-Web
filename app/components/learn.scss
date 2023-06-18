@@ -112,6 +112,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  overflow-y: scroll; /* 添加竖直方向的滚动条 */
+  height: 100%; /* 设置元素高度为页面高度 */
 }
 
 .article {

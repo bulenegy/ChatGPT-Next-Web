@@ -16,22 +16,19 @@ interface ArticleProps {
   };
 }
 
-const Article = ({ article }) => {
-  if (!article || typeof article !== "object") {
-    return null; // or a fallback component
-  }
+const Article: React.FC<ArticleProps> = ({ article }) => {
   const handleClick = () => {
     window.open(article.link, "_blank");
   };
 
   return (
-
     <div className="article" onClick={handleClick}>
       <img src={article.image} alt="Article Image" />
       <a>{article.name}</a>
     </div>
   );
 };
+
 
 export function LearnPage() {
   const navigate = useNavigate();

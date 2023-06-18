@@ -7,7 +7,19 @@ import { useNavigate } from "react-router-dom";
 import { FileName, Path } from "../constant";
 import React, { useState, useEffect } from "react";
 
+interface ArticleProps {
+  article: {
+    id: number;
+    name: string;
+    link: string;
+    image: string;
+  };
+}
+
 const Article = ({ article }) => {
+  if (!article || typeof article !== "object") {
+    return null; // or a fallback component
+  }
   const handleClick = () => {
     window.open(article.link, "_blank");
   };

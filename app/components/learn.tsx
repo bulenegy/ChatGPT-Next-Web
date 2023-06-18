@@ -3,6 +3,7 @@ import { ErrorBoundary } from "./error";
 
 import styles from "./mask.module.scss";
 
+import "./mask.module.scss";
 
 import CloseIcon from "../icons/close.svg";
 
@@ -69,15 +70,15 @@ export function LearnPage() {
             </div>
 
 
-            <div >
-              <a href="https://www.cnblogs.com/tangyanzhi1111/p/17481579.html" target="_blank">
-                .Net7发现 System.Numerics.Vector 矢量化的一个 bug, Issues 给了 dotnet 团队
+            <div className="aritc">
+              <a className="aritc-title" href="https://www.cnblogs.com/tangyanzhi1111/p/17481579.html" target="_blank">
+                在安卓收集上快速使用GPT
               </a>
-              <p >
+              <p className="aritc-text">
                 <a href="https://www.cnblogs.com/tangyanzhi1111/">
-                  <img src="https://pic.cnblogs.com/face/490844/20221020190555.png"  alt="博主头像" />
+                  <img src="https://pic.cnblogs.com/face/490844/20221020190555.png"  alt="文章图片" />
                 </a>
-                因为前几天做.Net7的矢量化性能优化，发现了一个 bug。在类 System.Numerics.Vector 里面的成员变量 IsHardwareAccelerated。但是实际上不确定这个 bug 是 visual studio 2022 的还是System.Numerics.Vector库的，个人认为应该是前 ...
+                  使用此方式后，即可在主屏幕快速打开ChatGPT，使用效果等同于APP
               </p>
             </div>
 

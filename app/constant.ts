@@ -15,6 +15,7 @@ export enum Path {
   NewChat = "/new-chat",
   Masks = "/masks",
   Auth = "/auth",
+  // a5470
   Learn = "/learn",
 }
 
